@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# 1. Direct links from your repository
+HOSTS_URL="https://raw.githubusercontent.com/MohdFarag/fantastic-umbrella/refs/heads/main/hosts"
+POLICY_URL="https://raw.githubusercontent.com/MohdFarag/fantastic-umbrella/refs/heads/main/policy.json"
+
+# Chrome policy file path
+CHROME_POLICY_PATH="/etc/opt/chrome/policies/managed/policy.json"
+
+# 2. Update and lock the hosts file
+echo "Updating /etc/hosts..."
+sudo chattr -i /etc/hosts
+sudo curl -sL "$HOSTS_URL" -o /etc/hosts
+sudo chattr +i /etc/hosts
+
+# 3. Update and lock the Chrome policy file
+echo "Updating Chrome policies..."
+# Unlock only if the file already exists
+if [ -f "$CHROME_POLICY_PATH" ]; then
+    sudo chattr -i "$CHROME_POLICY_PATH"
+fi
+
+# Download the new file and apply the lock
+sudo curl -sL "$POLICY_URL" -o "$CHROME_POLICY_PATH"
+sudo chattr +i "$CHROME_POLICY_PATH"
+
+echo "Done! System secured and files locked successfully."
