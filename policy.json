@@ -1,0 +1,26 @@
+{
+  "ManagedBookmarks": [
+    {"name": "NextDNS Dashboard", "url": "https://my.nextdns.io"}
+  ],
+  "ExtensionInstallBlocklist": [],
+  "IncognitoModeAvailability": 1,
+  "BrowserGuestModeEnabled": false,
+  "BrowserAddPersonEnabled": false,
+  "ForceGoogleSafeSearch": true,
+  "ForceYouTubeRestrict": 2,
+  "DnsOverHttpsMode": "off",
+  "BuiltInDnsClientEnabled": false,
+  "SafeSitesFilterBehavior":1,
+  "SafeBrowsingProtectionLevel": 2,
+  "URLBlocklist": [
+    "https://gemini.google.com/gems/create*",
+    "gemini.google.com/gems/create/*",
+    "*://gemini.google.com/gems/create*",
+    "https://grok.com/*",
+    "grok.com"
+  ],
+  "ExtensionInstallForcelist": [
+    "blaaajhemilngeeffpbfkdjjoefldkok;https://clients2.google.com/service/update2/crx",
+    "pbcoegikffnadpahojjhgdladmmddeji;https://clients2.google.com/service/update2/crx"
+  ]
+}
